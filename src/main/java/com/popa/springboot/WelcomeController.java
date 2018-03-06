@@ -1,5 +1,7 @@
 package com.popa.springboot;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.popa.beans.CubsTeam;
+import com.popa.beans.Player;
 import com.popa.beans.Team;
 import com.popa.service.WelcomeService;
 
@@ -31,9 +34,18 @@ public class WelcomeController {
 	@Autowired
 	private CubsTeam cubsTeam;
 	
+	//autowire a list of objects
+	@Autowired
+	private List<Player> players;
+	
 	@RequestMapping("/welcome")
 	public String welcome() {
+		StringBuilder playersText = new StringBuilder();
+		for (Player player : players) {
+			playersText.append(player.getName() +" ");
+		}
+		redSox.setName("This is a new name");
 		return service.getWelcomeMessage() + " " + redSox.getName() + 
-			" versus " + cubsTeam.getName() + " after team " + blueSox.getName() + " is sent home." ;
+			" versus " + cubsTeam.getName() + " after team " + blueSox.getName() + " is sent home. \n Players are : "+ playersText ;
 	}
 }
