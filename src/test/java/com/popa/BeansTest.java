@@ -1,3 +1,5 @@
+package com.popa;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -34,3 +36,16 @@ public class BeansTest {
 		assertEquals(name, "Blue Sox");
 	}
 }
+
+
+/**
+ * Transaction
+ * ACID Properties :
+ * - atomic - all or nothing (when credit card falls)
+ * - consistent - DB integrity never violated (foring key)
+ * - isolated -  how transactions see work done by others
+ * - durable - committed changes are permanent
+ * 
+ * Transaction in Spring (@Transactional)
+ * - will be use the transaction manager of the database
+*/
