@@ -7,17 +7,16 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.popa.beans.AppConfig;
 import com.popa.beans.BlueSox;
+import com.popa.config.AppConfig;
 
 //run the application context and catch it. No need to fire it over and over again
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = AppConfig.class)
 // every test will run into a transaction and will rollback when is finish
 // very useful in database tests
-@Transactional
+//@Transactional
 public class BeansTest {
 	
 	@Autowired

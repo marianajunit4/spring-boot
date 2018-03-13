@@ -36,11 +36,17 @@
         </dependency>
 
 		<!--in memory database -->
-		<!-- 
         <dependency>
        		 <groupId>com.h2database</groupId>
        		 <artifactId>h2</artifactId>
-       	</dependency> -->
+       	</dependency>
+       	
+       	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+    		<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    	</dependency>
+       	
 	</dependencies>
   
 </project>

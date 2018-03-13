@@ -22,7 +22,7 @@ public class LoggingAspect {
 		String arg = joinPoint.getArgs()[0].toString();
 		logger.info("Called " + method + "with args "+ arg + " on " + joinPoint.getTarget());
 	}
-	
+	/*
 	@Around("execution(String getName())")
 	public Object checkForRain(ProceedingJoinPoint pjp) throws Throwable {
 		boolean rain = Math.random() < 0.5;
@@ -34,5 +34,5 @@ public class LoggingAspect {
 			logger.info(result.toString());
 		}
 		return result;
-	}
+	}*/
 }

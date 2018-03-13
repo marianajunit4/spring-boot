@@ -3,11 +3,7 @@ package com.popa.springboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.popa.beans.AppConfig;
 
 //launch the spring application
 @SpringBootApplication
@@ -20,6 +16,12 @@ public class Application {
 		//using java class configuration
 		//ApplicationContext contextJava = new AnnotationConfigApplicationContext(AppConfig.class);
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
+		
+		//Log all the beans defined
+		/*(System.out.println(ctx.getBeanDefinitionCount());
+        for (String name : ctx.getBeanDefinitionNames()) {
+            System.out.println(name);
+        }*/
 
 	}
 

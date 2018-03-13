@@ -42,10 +42,10 @@ public class WelcomeController {
 	public String welcome() {
 		StringBuilder playersText = new StringBuilder();
 		for (Player player : players) {
-			playersText.append(player.getName() +" ");
+			playersText.append(player.getName());
 		}
 		redSox.setName("This is a new name");
-		return service.getWelcomeMessage() + " " + redSox.getName() + 
+		return service.getWelcomeMessage() + " " + redSox.getName() + " " +
 			" versus " + cubsTeam.getName() + " after team " + blueSox.getName() + " is sent home. \n Players are : "+ playersText ;
 	}
 }
