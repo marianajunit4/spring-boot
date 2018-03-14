@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.popa.entities.Account;
 import com.popa.repositories.AccountRepository;
+import com.popa.repositories.UserRepository;
 import com.popa.service.AccountService;
 
 @RestController
@@ -15,6 +16,9 @@ public class DBAccessController {
 	
 	@Autowired
 	private AccountRepository accountRepository;
+
+	@Autowired
+	private UserRepository userRepository;
 
 	@Autowired
 	private AccountService service;
@@ -31,6 +35,9 @@ public class DBAccessController {
 			long id = accounts.get(0).getId();
 			textBuilder.append("Balance of the account " + id + " is " + service.getBalance(id));
 		}
+		
+		textBuilder.append("Number of available user is " + userRepository.getNumberOfUsers());
+		
 		return textBuilder.toString();
 	}
 }

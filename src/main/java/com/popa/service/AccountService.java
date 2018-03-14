@@ -13,7 +13,7 @@ import com.popa.repositories.AccountRepository;
 
 @Service
 @Transactional//ALL THE METHODS RUNS IN TRANSACTION
-@Profile("test")
+@Profile({"test","prod"})
 public class AccountService {
 	
 	@Autowired
