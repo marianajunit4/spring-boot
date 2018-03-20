@@ -4,3 +4,6 @@ INSERT INTO Account VALUES(33, 150.0);
 
 INSERT INTO User VALUES(1, 'Mariana');
 INSERT INTO User VALUES(2, 'Tavi');
+
+INSERT INTO Person VALUES(1, 'Mariana', 31);
+INSERT INTO Person VALUES(2, 'Tavi', 36);

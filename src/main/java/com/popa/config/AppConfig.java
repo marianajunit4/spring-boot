@@ -20,6 +20,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
@@ -45,8 +46,16 @@ import com.popa.beans.Team;
 @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
 //enables spring's annotation-driven transaction management capability
 @EnableTransactionManagement
-//@EnableJpaRepositories("com.popa.repositories")
+// used when working with Spring Data, because you don't have anymore a repository annotation
+@EnableJpaRepositories("com.popa.repositories")
 @PropertySource("classpath:prod.properties")
+
+/**
+ * The way you can configure a spring boot application using the link
+ * http://start.spring.io/
+*/
+
+
 public class AppConfig {
 	
 	//reads the property source, prod.properties
